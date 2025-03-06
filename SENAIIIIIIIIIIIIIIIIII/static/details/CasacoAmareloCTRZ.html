@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio de Produto</title>
+    <link rel="stylesheet" href="style-anuncio.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="/static/images/CasacoAmareloCTRZ.jpg" alt="Casaco Amarelo Cortez">
+        </div>
+        <div class="product-details">
+            <h1>Casaco Amarelo Cortez</h1>
+            <p class="price">R$ 749,90</p>
+            <p class="description">Conforto e estilo se encontram no blusão de moletom. Ideal para dias mais frescos, possui capuz ajustável e bolso canguru. Feito de tecido macio, é uma escolha casual para um visual descontraído.</p>
+            
+            <div class="admin-actions" id="admin-actions">
+                <label for="new-price">Novo preço:</label>
+                <input type="text" id="new-price" name="new-price" placeholder="Novo preço">
+                <button onclick="updatePrice()">Alterar Preço</button>
+            </div>
+            
+            <div class="actions">
+                <a href="/pagamento" class="button">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            var newPrice = document.getElementById('new-price').value;
+            if(newPrice) {
+                alert('Preço alterado para: ' + newPrice);
+            }
+        }
+    </script>
+</body>
+</html>

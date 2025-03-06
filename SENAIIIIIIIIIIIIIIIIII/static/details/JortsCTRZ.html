@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio de Produto</title>
+    <link rel="stylesheet" href="style-anuncio.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="/static/images/BermudaCTRZ.jpg" alt="Bermuda Cortez">
+        </div>
+        <div class="product-details">
+            <h1>Bermuda Cortez</h1>
+            <p class="price">R$ 1990,00</p>
+            <p class="description">A Shorts Corteiz Alcatraz Denim Washed Black, lançada em 02/08/2024 na cor preto, já está disponível. Compre com confiança e garantia de originalidade! Alta qualidade e disponível em vários tamanhos.</p>
+            
+            <div class="admin-actions" id="admin-actions">
+                <label for="new-price">Novo preço:</label>
+                <input type="text" id="new-price" name="new-price" placeholder="Novo preço">
+                <button onclick="updatePrice()">Alterar Preço</button>
+            </div>
+            
+            <div class="actions">
+                <div class="actions">
+                    <a href="/pagamento" class="button">Comprar</a>
+            </div>
+        </div>
+
+        <script>
+            function updatePrice() {
+                var newPrice = document.getElementById('new-price').value;
+                if(newPrice) {
+                    alert('Preço alterado para: ' + newPrice);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

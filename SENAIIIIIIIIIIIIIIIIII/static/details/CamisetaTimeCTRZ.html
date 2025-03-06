@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio de Produto</title>
+    <link rel="stylesheet" href="style-anuncio.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="/static/images/CamisaAmarelaCTRZ.jpg" alt="Camiseta de Time">
+        </div>
+        <div class="product-details">
+            <h1>Camiseta de Time</h1>
+            <p class="price">R$ 2200,00</p>
+            <p class="description">Com uma estampa exclusiva e moderna, essa camiseta é uma peça de destaque. Feita em malha leve e respirável, proporciona conforto e estilo. Combine com jeans ou bermuda para um look descontraído.</p>
+            
+            <div class="admin-actions" id="admin-actions">
+                <label for="new-price">Novo preço:</label>
+                <input type="text" id="new-price" name="new-price" placeholder="Novo preço">
+                <button onclick="updatePrice()">Alterar Preço</button>
+            </div>
+            
+            <div class="actions">
+                <a href="/pagamento" class="button">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            var newPrice = document.getElementById('new-price').value;
+            if(newPrice) {
+                alert('Preço alterado para: ' + newPrice);
+            }
+        }
+    </script>
+</body>
+</html>

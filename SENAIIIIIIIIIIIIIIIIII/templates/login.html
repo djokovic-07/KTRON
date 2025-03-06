@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/registroElogin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Usuário" required>
+            <input type="password" name="password" placeholder="Senha" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="isAdminCheckbox" name="is_admin">
+                <label for="isAdminCheckbox">Sou Administrador</label>
+            </div>
+
+            <input type="text" id="cpfField" name="cpf" placeholder="CPF (somente admins)" style="display: none;" maxlength="14">
+
+            <button type="submit">Entrar</button>
+        </form>
+        <a href="/">Voltar</a>
+    </div>
+
+    <script>
+        document.getElementById("isAdminCheckbox").addEventListener("change", function() {
+            let cpfField = document.getElementById("cpfField");
+            if (this.checked) {
+                cpfField.style.display = "block";
+                cpfField.required = true;
+            } else {
+                cpfField.style.display = "none";
+                cpfField.required = false;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="static/registroElogin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="Usuário" required>
+            <input type="password" name="password" placeholder="Senha" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="adminCheckbox" name="is_admin">
+                <label for="adminCheckbox">Sou Administrador</label>
+            </div>
+
+            <input type="text" id="cpfField" name="cpf" placeholder="CPF (somente para admins)" style="display: none;">
+
+            <button type="submit">Registrar</button>
+        </form>
+        <a href="/">Voltar</a>
+    </div>
+
+    <script>
+        document.getElementById("adminCheckbox").addEventListener("change", function() {
+            let cpfField = document.getElementById("cpfField");
+            cpfField.style.display = this.checked ? "block" : "none";
+            cpfField.required = this.checked;
+        });
+    </script>
+</body>
+</html>

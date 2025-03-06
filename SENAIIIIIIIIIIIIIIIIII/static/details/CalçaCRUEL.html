@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio de Produto</title>
+    <link rel="stylesheet" href="style-anuncio.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="/static/images/CalçaEWCRUEL.jpg" alt="Calça EWCRUEL">
+        </div>
+        <div class="product-details">
+            <h1>Calça EWCRUEL</h1>
+            <p class="price">R$ 800,00</p>
+            <p class="description">A calça baggy traz o equilíbrio perfeito entre conforto e estilo retrô. Com sua modelagem ampla e cintura alta, é ideal para compor looks despojados e modernos. Feita em tecido resistente e macio, proporciona liberdade de movimento e um visual descontraído. Combine com camisetas básicas ou cropped tops para um estilo urbano autêntico. Disponível em várias lavagens de jeans e cores sólidas, é uma peça essencial no guarda-roupa de quem busca tendência e versatilidade.</p>
+            
+            <div class="admin-actions" id="admin-actions">
+                <label for="new-price">Novo preço:</label>
+                <input type="text" id="new-price" name="new-price" placeholder="Novo preço">
+                <button onclick="updatePrice()">Alterar Preço</button>
+            </div>
+            
+            <div class="actions">
+                <a href="/pagamento" class="button">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            var newPrice = document.getElementById('new-price').value;
+            if(newPrice) {
+                alert('Preço alterado para: ' + newPrice);
+            }
+        }
+    </script>
+</body>
+</html>

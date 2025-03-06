@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Roupas</title>
+    <link rel="stylesheet" href="static/catalog.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Roupas</h1>
+        <p>Bem-vindo, {{ username }}! <a href="/logout" class="logout-btn">Sair</a></p>
+        <div id="category-buttons">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="Camisetas">Camisetas</button>
+            <button class="category-btn" data-category="Calçados">Calçados</button>
+            <button class="category-btn" data-category="Calças/Bermudas">Calças/Bermudas</button>
+            <button class="category-btn" data-category="Casacos/Jaquetas">Casacos/Jaquetas</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="catalog" class="catalog">
+            <!-- Produtos serão inseridos dinamicamente aqui -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ktron - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        const currentPage = "Catálogo de Roupas"; // Variável usada no script
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

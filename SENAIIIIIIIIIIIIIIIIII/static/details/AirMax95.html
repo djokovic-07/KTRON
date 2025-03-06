@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio de Produto</title>
+    <link rel="stylesheet" href="style-anuncio.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="/static/images/AirMax95CTRZ1.jpg" alt="Tênis Nike AirMax95">
+        </div>
+        <div class="product-details">
+            <h1>Tênis Nike AirMax95</h1>
+            <p class="price">R$ 7500,00</p>
+            <p class="description">Ideal para treinos e atividades físicas, o tênis esportivo conta com tecnologia de amortecimento que reduz impactos e melhora o desempenho. A palmilha anatômica proporciona conforto extra, enquanto o tecido respirável mantém os pés secos. Perfeito para quem busca performance com estilo.</p>
+
+
+            <div class="admin-actions" id="admin-actions">
+                <label for="new-price">Novo preço:</label>
+                <input type="text" id="new-price" name="new-price" placeholder="Novo preço">
+                <button onclick="updatePrice()">Alterar Preço</button>
+            </div>
+
+            
+            <div class="actions">
+                <a href="/pagamento" class="button">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            var newPrice = document.getElementById('new-price').value;
+            if(newPrice) {
+                alert('Preço alterado para: ' + newPrice);
+            }
+        }
+    </script>
+</body>
+</html>

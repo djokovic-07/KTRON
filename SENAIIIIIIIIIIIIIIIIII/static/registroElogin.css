@@ -1,0 +1,121 @@
+/* Corpo e Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Container centralizado */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+
+/* Formulário */
+form {
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Efeito de foco no campo de entrada */
+input:focus {
+    border-color: #2575fc;
+}
+
+/* Botões */
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a11cb;
+}
+
+/* Link de registro */
+p {
+    margin-top: 15px;
+}
+
+p a {
+    color: #2575fc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de erro */
+.error {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+#cpfField {
+    margin-top: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Dá um espaço entre a checkbox e o texto */
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
